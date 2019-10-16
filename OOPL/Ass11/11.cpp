@@ -33,26 +33,19 @@ int main(){
 
         break;
     case 2:
-        cout << "1. PUSH BACK \n2. POP BACK\n3. PUSH FRONT \n4. POP FRONT\n5. DISPLAY QUEUE";
+        cout << "1. PUSH \n2. POP\n3. DISPLAY QUEUE";
         cin >> choice;
         switch (choice)
         {
         case 1:
-            cout << "Enter number to be pushed into the queue at the BACK";
+            cout << "Enter number to be pushed into the queue";
             cin >> n;
             Q.push_back(n);
             break;
         case 2:
-            Q.pop_back();
+            Q.pop_front();
             break;
         case 3:
-            cout << "Enter number to be pushed into the queue at the FRONT";
-            cin >> n;
-            Q.push_front(n);
-            break;
-        case 4:
-            Q.pop_front();
-        case 5:
             for (it2 = Q.begin(); it2 != Q.end(); it2++)
                 cout << *it2 << " ";
             cout << endl;
