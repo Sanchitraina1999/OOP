@@ -57,6 +57,7 @@ void biodata::display_biodata()
 {
     cout << a << " " << b << " " << c << endl;
 }
+
 int main()
 {
     biodata B;
