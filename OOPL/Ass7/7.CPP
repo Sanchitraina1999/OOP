@@ -1,11 +1,13 @@
 /*
-Crete User defined exception to check the following conditions and throw the exception if the criterion does not meet.
+
+Create User defined exception to check the following conditions and throw the exception if the criterion does not meet.
 a. User has age between 18 and 55  
 b. User has income between Rs. 50,000 – Rs. 1,00,000 per month
 c. User stays in Pune/Mumbai/Bangalore/Chennai
 d. User has 4-wheeler
 Accept age, income, city, vehicle from the user and check for the conditions mentioned above.
 If any of the condition does not met then throw an exception. 
+
 */
 #include<bits/stdc++.h>
 #include<exception>
