@@ -1,10 +1,12 @@
 /*Write C++ program using STL  for Dequeue (Double ended queue)*/
 #include<iostream>
 #include<deque>
+using namespace std;
 int main(){
     deque<int> DQ;
     deque<int>::iterator it;
     int choice,n;
+    hell:
     cout << "1. PUSH BACK \n2. POP BACK\n3. PUSH FRONT \n4. POP FRONT\n5. DISPLAY QUEUE";
     cin >> choice;
     switch (choice)
@@ -29,5 +31,10 @@ int main(){
             cout << *it << " ";
         cout << endl;
     }
+    char yn;
+    cout<<"Continue(y/n) : ";
+    char yn; cin>>yn;
+    if(yn=='y')
+        goto hell;
     return 0;
 }
