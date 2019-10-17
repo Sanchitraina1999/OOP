@@ -146,3 +146,4 @@ int main()
     p.display_person();
     return 0;
 }
+//ITEM RECORDS KO B SAME TARAH SE KARNA H
