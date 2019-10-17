@@ -3,10 +3,11 @@ Develop an object oriented program in C++ to create a database of student inform
 Name, Roll number, Class, division, Date of Birth, Blood group, Contact address, telephone number, driving license no. etc.
 Construct the database with suitable member functions for initializing and destroying the data viz constructor, default constructor,
 Copy constructor, destructor, static member functions, friend class, this pointer, inline code and dynamic memory allocation operators-new
-and delete.*/
+and delete.
+*/
 #include<iostream>
-#include<string.h>
 #include<iomanip>
+#include<string.h>
 using namespace std;
 class db{
     char roll[10];
@@ -21,7 +22,8 @@ public:
     static void show_count(){
         cout<<"No. of objects created: "<<count<<endl;
     }
-    db(){
+    db()
+    {
         strcpy(roll, "21154");
         strcpy(name, "Sanchit");
         strcpy(Class, "SE-I");
@@ -33,7 +35,8 @@ public:
         strcpy(license, "JK020030018459");
         count++;
     }
-    db(db *ob){
+    db(db *ob)
+    {
         strcpy(name, ob->name);
         strcpy(roll, ob->roll);
         strcpy(dob, ob->dob);
@@ -45,40 +48,40 @@ public:
         strcpy(license, ob->license);
         count++;
     }
-    inline void getdata()
-    {
+    inline void getdata(){
         cout << "\n\nEnter:name,roll,Class,Div,Dob,bg,contact,phone,license \n\n\n";
         cin >> name >> roll >> Class >> Div >> dob >> bg >> contact >> phone >> license;
     }
-    friend void display(db d);
+    friend void display_data(db d);
     ~db(){
-        cout << "\n\n"<< this->name << "(Object) is destroyed!"<<endl;
+        cout<<"\n"<<this->name<<" (object) has been destroyed !"<<endl;
     }
 };
-
 int db::count=0;
-
-void display(db d){
+void display_data(db d)
+{
     cout << "\n"<< "            " << d.name << "     " << d.roll << "    " << d.Class << "   " << d.Div << "            " << d.dob << "    " << d.bg << "            " << d.contact << "            " << d.phone << "            " << d.license;
 }
 int main(){
     int i,n;
-    db d1,*ptr[5];
-    cout << "\nHow many objects u want to create?(MAX 5):";
-    cin >> n;
-    for (i = 0; i < n; i++)
-    {
+    db /*d1,*/*ptr[5];
+    cout<<"No. of objects u want to create: ";
+    cin>>n;
+    cout<<"ENTER DATA FOR "<<n<<" OBJECTS : \n";
+    for(i=0;i<n;i++){
         ptr[i] = new db();
-        ptr[i]->getdata();
+        ptr[i] ->getdata();
     }
+    cout << "DATA OF " << n << " OBJECTS : \n";
     cout << "\n"<< setw(12) << "name" << setw(5) << "roll" << setw(4) << "Class" << setw(4) << "Div" << setw(12) << "dob" << setw(4) << "bg" << setw(12) << "contact" << setw(12) << "phone" << setw(12) << "license";
-    for (i = 0; i < n; i++)
-        display(*ptr[i]);
-    db::show_count();
-    for (i = 0; i < n; i++)
-    {
-        delete (ptr[i]);
+    for(i=0;i<n;i++){
+        display_data(*ptr[i]);
     }
-    cout << "\nObjects deleted!";
+    /*cout<<"USE OF COPY CONSTRUCTOR"<<endl;
+    db c(&d1);
+    display_data(c);
+    */
+    db::show_count();
+    cout << "Objects deleted !" << endl;
     return 0;
 }
