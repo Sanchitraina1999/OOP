@@ -3,25 +3,7 @@ Develop an object oriented program in C++ to create a database of student inform
 Name, Roll number, Class, division, Date of Birth, Blood group, Contact address, telephone number, driving license no. etc.
 Construct the database with suitable member functions for initializing and destroying the data viz constructor, default constructor,
 Copy constructor, destructor, static member functions, friend class, this pointer, inline code and dynamic memory allocation operators-new
-and delete.
-int main()
-{
-    int n, i;
-    db d1, *ptr[5];
-    cout << "\nDefault values:";
-    display(d1);
-
-    d1.getdata();
-    display(d1);
-
-    db d2(&d1);
-    cout << "\n\nUse of copy constructor :\n";
-    display(d2);
-
-    
-    return 0;
-}
-*/
+and delete.*/
 #include<iostream>
 #include<string.h>
 #include<iomanip>
